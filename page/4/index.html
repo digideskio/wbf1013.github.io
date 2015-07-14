@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JsonNode的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="And we all shine on, like the moon and the stars and the sun. – John Lennon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JsonNode的博客">
+<meta property="og:url" content="http://www.jsonnode.com/page/4/index.html">
+<meta property="og:site_name" content="JsonNode的博客">
+<meta property="og:description" content="And we all shine on, like the moon and the stars and the sun. – John Lennon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JsonNode的博客">
+<meta name="twitter:description" content="And we all shine on, like the moon and the stars and the sun. – John Lennon">
+  
+    <link rel="alternative" href="/atom.xml" title="JsonNode的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JsonNode的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.jsonnode.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-using-log4net" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/08/using-log4net/" class="article-date">
+  <time datetime="2014-01-08T07:27:02.000Z" itemprop="datePublished">2014-01-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ASP-NET/">ASP.NET</a>►<a class="article-category-link" href="/categories/ASP-NET/开源类库/">开源类库</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/08/using-log4net/">log4net使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>平时项目里一直都有在使用log4net作为日志记录模块，当时一直都没有去理解log4net的配置文件信息。今天抽出了一点时间来看了看配置文件信息。</p>
+<p>log4net配置文件信息：</p>
+<pre><code><span class="subst">&amp;</span><span class="literal">lt</span>;log4net<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;appender name<span class="subst">=</span><span class="string">"ErrorAppender"</span> <span class="keyword">type</span><span class="subst">=</span><span class="string">"log4net.Appender.RollingFileAppender"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"File"</span> value<span class="subst">=</span><span class="string">"Log\\"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"AppendToFile"</span> value<span class="subst">=</span><span class="string">"true"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"MaxSizeRollBackups"</span> value<span class="subst">=</span><span class="string">"100"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"MaxFileSize"</span> value<span class="subst">=</span><span class="string">"10240"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"StaticLogFileName"</span> value<span class="subst">=</span><span class="string">"false"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"DatePattern"</span> value<span class="subst">=</span><span class="string">"yyyyMMdd"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"RollingStyle"</span> value<span class="subst">=</span><span class="string">"Date"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;layout <span class="keyword">type</span><span class="subst">=</span><span class="string">"log4net.Layout.PatternLayout"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+      <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"ConversionPattern"</span> value<span class="subst">=</span><span class="string">"%n异常时间：%d [%t] %n异常级别：%-5p %n异 常 类：%c [%x] %n%m %n"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;/layout<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;/appender<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;appender name<span class="subst">=</span><span class="string">"InfoAppender"</span> <span class="keyword">type</span><span class="subst">=</span><span class="string">"log4net.Appender.RollingFileAppender"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"File"</span> value<span class="subst">=</span><span class="string">"Log\\"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"AppendToFile"</span> value<span class="subst">=</span><span class="string">"true"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"MaxSizeRollBackups"</span> value<span class="subst">=</span><span class="string">"100"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"MaxFileSize"</span> value<span class="subst">=</span><span class="string">"10240"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"StaticLogFileName"</span> value<span class="subst">=</span><span class="string">"false"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"DatePattern"</span> value<span class="subst">=</span><span class="string">"yyyyMMdd"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"RollingStyle"</span> value<span class="subst">=</span><span class="string">"Date"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;layout <span class="keyword">type</span><span class="subst">=</span><span class="string">"log4net.Layout.PatternLayout"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+      <span class="subst">&amp;</span><span class="literal">lt</span>;param name<span class="subst">=</span><span class="string">"ConversionPattern"</span> value<span class="subst">=</span><span class="string">"%n日志时间：%d [%t] %n日志级别：%-5p %n日 志 类：%c [%x] %n%m %n"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;/layout<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;/appender<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;logger name<span class="subst">=</span><span class="string">"logerror"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;level value<span class="subst">=</span><span class="string">"ERROR"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;appender<span class="attribute">-ref</span> ref<span class="subst">=</span><span class="string">"ErrorAppender"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;/logger<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;logger name<span class="subst">=</span><span class="string">"loginfo"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;level value<span class="subst">=</span><span class="string">"INFO"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;appender<span class="attribute">-ref</span> ref<span class="subst">=</span><span class="string">"InfoAppender"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;/logger<span class="subst">&amp;</span><span class="literal">gt</span>;
+<span class="subst">&amp;</span><span class="literal">lt</span>;/log4net<span class="subst">&amp;</span><span class="literal">gt</span>;
+<span class="string">`&lt;/pre&gt;
+
+一个appender节点，作为一种日志类型的配置，可以根据param参数，很方便地配置文件大小，是否为附加错误信息等等配置信息。
+一个logger节点，作为一个具体日志对象的设置，根据不同的名称，可以设置和选择不同的日志记录方式。
+
+当然仅仅有配置文件是不够的，我们还需要给log4net增加Helper类。
+
+&lt;pre&gt;`</span><span class="keyword">public</span> class Log4Helper
+{
+    <span class="keyword">public</span> Log4Helper()
+    { }
+
+    <span class="keyword">private</span> static readonly ILog logerror <span class="subst">=</span> LogManager<span class="built_in">.</span>GetLogger(<span class="string">"logerror"</span>);
+    <span class="keyword">private</span> static readonly ILog loginfo <span class="subst">=</span> LogManager<span class="built_in">.</span>GetLogger(<span class="string">"loginfo"</span>);
+
+    <span class="keyword">public</span> static <span class="literal">void</span> AddError(<span class="built_in">string</span> errMsg)
+    {
+        logerror<span class="built_in">.</span>Error(errMsg);
+    }
+
+    <span class="keyword">public</span> static <span class="literal">void</span> AddError(Exception ex)
+    {
+        logerror<span class="built_in">.</span>Error(Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>Message <span class="subst">+</span> Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>ToString());
+    }
+
+    <span class="keyword">public</span> static <span class="literal">void</span> AddError(<span class="built_in">string</span> errMsg, Exception ex)
+    {
+        logerror<span class="built_in">.</span>Error(errMsg <span class="subst">+</span> Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>Message <span class="subst">+</span> Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>ToString());
+    }
+
+    <span class="keyword">public</span> static <span class="literal">void</span> AddInfo(<span class="built_in">string</span> infoMsg)
+    {
+        loginfo<span class="built_in">.</span>Info(infoMsg);
+    }
+
+    <span class="keyword">public</span> static <span class="literal">void</span> AddInfo(<span class="built_in">string</span> infoMsg, Exception ex)
+    {
+        loginfo<span class="built_in">.</span>Info(infoMsg <span class="subst">+</span> Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>Message <span class="subst">+</span> Environment<span class="built_in">.</span>NewLine <span class="subst">+</span> ex<span class="built_in">.</span>ToString());
+    }
+}
+</code></pre><p>在Helper类的帮助下，我们可以选择不同的日志记录方式，记录不同的日志信息。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2014/01/08/using-log4net/" data-id="cic2uu9gm000f5ksktn589n81" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log4net/">log4net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-person-not-tools" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/27/person-not-tools/" class="article-date">
+  <time datetime="2013-12-27T01:36:10.000Z" itemprop="datePublished">2013-12-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/阅读/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/27/person-not-tools/">关键是人，而不是工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先说两件事吧：</p>
+<ol>
+<li><p>有个学生说他想买全套 OmniFocus。我吓了一跳，一个学生买那么贵的 GTD 软件干什么？学校里上上课、踢踢球什么的，也用不着 OmniFocus 管理时间啊。问了才知道，他平时做事拖拖拉拉，希望借这个软件改掉自己的毛病。</p>
+</li>
+<li><p>我听 N 个人说过这样的话：读书还得用 Kindle，苹果 iOS 上那个 iBooks 虽然也不错，但 iPad 和 iPhone 功能太多了，容易分心。</p>
+</li>
+</ol>
+<p>你自己又懒又没时间观念，什么 GTD 也最多只是给自己买了个经常弹出提醒的烦人东西。很多做事干脆的人用的其实只是手机自带的日历和 ToDo List 应用。你自己静不下心，Kindle 买来也没用，我在 iPad 和 iPhone 上读了几十本书，从没感觉到「分心」。Kindle 的确不能玩游戏和刷社交网络，但浮躁的人看了几眼书以后就会掏出手机玩的。</p>
+<p>身边类似的事儿还一大堆，比如买了超贵的运动鞋和各种手环、计步器等电子设备，然后继续宅在家里长肥肉；比如买了几万元的单反和镜头，拍出的照片还不如别人拿 iPhone 拍的好；比如买 Mac Pro 工作站和 HKKB 机械键盘，写出的代码照样烂 ……</p>
+<p>一方面，很多人抱有借助于好设备和好软件让自己改掉毛病和越来越厉害的愿望；另一方面，网上流行「晒」，一群所谓的「牛人」整体显摆自己花大价钱买的软硬件。既让人心痒又让人觉得「我有这些东西后也会和他们一样牛」…… 然后就陷入唯工具论了。</p>
+<p>如果你真是人傻钱多，买就买呗，我只提一下而已。再说钱花出去总会有点效果的，比如就算你买完 Fitbit 或者耐克的手环还是不跑步，至少也能看到自己每天走了几步消耗了多少热量对吧。</p>
+<p>最后，别忘了，你买这些工具是为了解决需求，而不是为了浪费时间在进一步折腾它们上。举个例子，当年博客还很流行的时候，很多人折腾高端大气上档次的 WordPress。折腾着折腾着，就忘了写博客这件事了，变成整天找插件找主题做优化了。我找了个很土很简单简单但功能足够用的 Bo-blog，一直坚持写到了现在 …… 那些高端大气上档次的 WordPress Blogger 们呢？</p>
+<p>关键是人，而不是工具。</p>
+<p>转自： <a href="http://jianshu.io/p/4c8b6897e9e8" target="_blank" rel="external">关键是人，而不是工具</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/12/27/person-not-tools/" data-id="cic2uu9h8000s5kskcu3pcc4h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GTD/">GTD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人/">人</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间管理/">时间管理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-301-url-rewriting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/21/301-url-rewriting/" class="article-date">
+  <time datetime="2013-12-21T13:46:23.000Z" itemprop="datePublished">2013-12-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ASP-NET/">ASP.NET</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/21/301-url-rewriting/">301重定向的几种方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="301重定向的几种方法"><em>301重定向的几种方法</em></h2><p>1、IIS新建网站来做301重定向</p>
+<blockquote>
+<p>1、打开internet信息服务管理器，在欲重定向的网页或目录上按右键选择属性</p>
+<p>2、选中“重定向到URL”</p>
+<p>3、在对话框中输入目标页面的地址</p>
+<p>4、切记，记得选中“资源的永久重定向”</p>
+<p>5、当然，最后要点击“应用”</p>
+</blockquote>
+<p>2、ASP.NET 中使用C#代码来做301重定向</p>
+<pre><code>Response<span class="built_in">.</span>Status <span class="subst">=</span> <span class="string">"301 Moved Permanently"</span>; 
+Response<span class="built_in">.</span>AddHeader(<span class="string">"Location"</span>,<span class="string">"http://www.hi1718.com"</span>);  
+<span class="string">`&lt;/pre&gt;
+
+3、 Web.config 配置301重定向
+
+&lt;pre&gt;`</span><span class="subst">&amp;</span><span class="literal">lt</span>;configuration<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;system<span class="built_in">.</span>webServer<span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;rewrite<span class="subst">&amp;</span><span class="literal">gt</span>;
+      <span class="subst">&amp;</span><span class="literal">lt</span>;rules<span class="subst">&amp;</span><span class="literal">gt</span>;
+
+        <span class="subst">&amp;</span><span class="literal">lt</span>;rule name<span class="subst">=</span><span class="string">"www redirect"</span> stopProcessing<span class="subst">=</span><span class="string">"true"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+              <span class="subst">&amp;</span><span class="literal">lt</span>;<span class="keyword">match</span> url<span class="subst">=</span><span class="string">".*"</span> <span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+                 <span class="subst">&amp;</span><span class="literal">lt</span>;conditions<span class="subst">&amp;</span><span class="literal">gt</span>;
+     <span class="subst">&amp;</span><span class="literal">lt</span>;add input<span class="subst">=</span><span class="string">"{HTTP_HOST}"</span> pattern<span class="subst">=</span><span class="string">"^zhaojiyu.com$"</span> <span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+                 <span class="subst">&amp;</span><span class="literal">lt</span>;/conditions<span class="subst">&amp;</span><span class="literal">gt</span>;
+              <span class="subst">&amp;</span><span class="literal">lt</span>;action <span class="keyword">type</span><span class="subst">=</span><span class="string">"Redirect"</span> url<span class="subst">=</span><span class="string">"http://www.hi1718.com/{R:0}"</span>
+                   redirectType<span class="subst">=</span><span class="string">"Permanent"</span> <span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+          <span class="subst">&amp;</span><span class="literal">lt</span>;/rule<span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;/rules<span class="subst">&amp;</span><span class="literal">gt</span>;
+    <span class="subst">&amp;</span><span class="literal">lt</span>;/rewrite<span class="subst">&amp;</span><span class="literal">gt</span>;
+  <span class="subst">&amp;</span><span class="literal">lt</span>;/system<span class="built_in">.</span>webServer<span class="subst">&amp;</span><span class="literal">gt</span>;
+<span class="subst">&amp;</span><span class="literal">lt</span>;/configuration<span class="subst">&amp;</span><span class="literal">gt</span>;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/12/21/301-url-rewriting/" data-id="cic2uu9kh004n5ksk39nkq1mr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL-Rewrite/">URL Rewrite</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-float-compare" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/21/float-compare/" class="article-date">
+  <time datetime="2013-12-21T13:38:29.000Z" itemprop="datePublished">2013-12-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/21/float-compare/">float 比较， 这是一个坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了方便随机关键产品数据，做了一个随机值列的方案，列字段类型设置为float。</p>
+<p>在测试的两个随机值的时候， 故意设置了几个随机值相同保存到数据库表中， 这样问题就出来了。 详细如下： 当进行小于比较的时候，坑出现了</p>
+<pre><code><span class="keyword">select</span> top <span class="number">5</span> PartNo, [<span class="built_in">rand</span>]  <span class="keyword">from</span> PartNow <span class="built_in">where</span> [<span class="built_in">rand</span>] &amp;lt; <span class="number">0.850106894857748</span> order <span class="keyword">by</span> [<span class="built_in">rand</span>] <span class="built_in">desc</span>
+`&lt;/pre&gt;
+
+![查询结果](https:<span class="comment">//f.cloud.github.com/assets/1181144/1445889/71649f6e-422c-11e3-81a4-0d9d2f1cac15.jpg)</span>
+
+这个查询结果真是不忍直视啊， 接着测试了大于和等于 ，大于比较一切正常，但是等于比较的结果也不忍直视啊， 完全没有出现任务数据。
+
+&lt;pre&gt;`<span class="keyword">select</span> top <span class="number">5</span> PartNo,  [<span class="built_in">rand</span>]  <span class="keyword">from</span> Seo_PartNoWjw <span class="built_in">where</span> [<span class="built_in">rand</span>] = <span class="number">0.850106894857748</span> order <span class="keyword">by</span> [<span class="built_in">rand</span>] <span class="built_in">desc</span>
+</code></pre><p><img src="https://f.cloud.github.com/assets/1181144/1445919/2dbdea62-422d-11e3-9639-105dfba47ea1.jpg" alt="查询结果"></p>
+<p>看到这样的结果， 我和我的小伙伴都惊呆了。</p>
+<p>索性项目中不需要比较相等，而表面上两个float的数字相同的随机值概率小之又小。</p>
+<p>当需要遇到相等比较的随机值情况时，请珍惜生命，远离float。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/12/21/float-compare/" data-id="cic2uu9ic00245kskei0bw4pe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Float/">Float</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Server/">SQL Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随机值/">随机值</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-assembly-not-added" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/21/assembly-not-added/" class="article-date">
+  <time datetime="2013-12-21T13:29:49.000Z" itemprop="datePublished">2013-12-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ASP-NET/">ASP.NET</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/21/assembly-not-added/">未能加载程序集的错误解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>未能从程序集 C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Data.Entity.Build.Tasks.dll 加载任务“EntityClean”。找到的程序集清单定义与程序集引用不匹配。 (异常来自 HRESULT:0x80131040) 确认 声明是正确的，并且该程序集及其所有依赖项都可用。</p>
+<blockquote>
+<p>解决方法 ： 重启Visual Studio</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/12/21/assembly-not-added/" data-id="cic2uu9k0003z5kskuf5ue8qa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/未加载/">未加载</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序集/">程序集</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/19/hello-world-1/" class="article-date">
+  <time datetime="2013-12-18T17:02:14.000Z" itemprop="datePublished">2013-12-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/心情/">心情</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/19/hello-world-1/">世界，你好！</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>欢迎使用WordPress。这是系统自动生成的演示文章。编辑或者删除它，然后开始您的博客！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/12/19/hello-world-1/" data-id="cic2uu9i900225kskfvq66gjl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-solr-installer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/05/05/solr-installer/" class="article-date">
+  <time datetime="2013-05-05T13:11:15.000Z" itemprop="datePublished">2013-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Solr/">Solr</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/05/05/solr-installer/">Solr安装过程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Solr安装过程">Solr安装过程</h2><h3 id="下载相关资料">下载相关资料</h3><ol>
+<li>solr 4.2.0 <a href="http://lucene.apache.org/solr/" target="_blank" rel="external">http://lucene.apache.org/solr/</a> 期间安装过 solr 4.3.0 很可惜没有配置成功</li>
+<li>apache-tomcat-7.0.40 <a href="http://apache.fayea.com/apache-mirror/tomcat/tomcat-7/v7.0.40/bin/apache-tomcat-7.0.40.exe3" target="_blank" rel="external">http://apache.fayea.com/apache-mirror/tomcat/tomcat-7/v7.0.40/bin/apache-tomcat-7.0.40.exe3</a>.  中文分词工具包 ik-analyzer <a href="https://code.google.com/p/ik-analyzer/" target="_blank" rel="external">https://code.google.com/p/ik-analyzer/</a></li>
+<li>Java环境 jdk <a href="http://www.oracle.com/technetwork/indexes/downloads/index.html#java" target="_blank" rel="external">http://www.oracle.com/technetwork/indexes/downloads/index.html#java</a></li>
+</ol>
+<h3 id="安装过程">安装过程</h3><ol>
+<li>安装jdk 或者jvm solr需要使用jvm（Java虚拟机）</li>
+<li>安装Tomcat3.  解压solr 4.2.0，定位到dist目录：</li>
+</ol>
+<p><img src="https://f.cloud.github.com/assets/1181144/553050/ec9657da-c375-11e2-9e95-de3dcd0c7cbd.jpg" alt="solr-4 2 0"></p>
+<ol>
+<li><p>将 solr-4.2.0.war 重命名为: solr.war</p>
+</li>
+<li><p>定位到Tomcat的安装目录，将solr.war复制到webapps目录下。若Tomcat已经启动运行，solr.war会自动解压缩成solr文件夹。</p>
+</li>
+<li>接下来要创建solr索引要存放的位置了。 首先新建一个/solr-tomcat/ 文件夹，建在哪里都行，我这里建立在F:\solr-tomcat\，然后在\solr-tomcat\下，建立一个solr文件夹. 然后将 解压后的solr目录里面的example\solr\，</li>
+<li>接下来就是配置solr.home 了，有三种方式：</li>
+</ol>
+<ul>
+<li>基于当前路径的方式：(未测试此方法)</li>
+</ul>
+<p>这种情况要在自己建立的\solr-tomcat\目录下去启动tomcat,solr查找 ./solr,因启动时需要切换对到建立的\solr-tomcat\目录下。</p>
+<ul>
+<li>基于环境变量：(环境变量不大懂，自己试了一下，没成功)</li>
+</ul>
+<p>windows在环境变量中建立solr.home,值为D:\solr-tomcat （这是我自己目录,读者请注意写入自己的solr-tomcat目录）.</p>
+<ul>
+<li>基于JNDI： (本人使用的该种方式.)</li>
+</ul>
+<p>在tomcat安装目录下定位到 /conf/目录下 进入 /catalina/, 创建/localhost/ （若有该目录，怎不需要创建）,在/localhost/目录下创建solr.xml文件，里面的内容为：</p>
+<pre><code><span class="subst">&amp;</span><span class="literal">lt</span>;Context docBase<span class="subst">=</span><span class="string">"C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\solr"</span> debug<span class="subst">=</span><span class="string">"0"</span> crossContext<span class="subst">=</span><span class="string">"true"</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+<span class="subst">&amp;</span><span class="literal">lt</span>;Environment name<span class="subst">=</span><span class="string">"solr/home"</span> <span class="keyword">type</span><span class="subst">=</span><span class="string">"java.lang.String"</span> value<span class="subst">=</span><span class="string">"D:\solr-tomcat\solr"</span> override<span class="subst">=</span><span class="string">"true"</span><span class="subst">/</span><span class="subst">&amp;</span><span class="literal">gt</span>;
+<span class="subst">&amp;</span><span class="literal">lt</span>;/Context<span class="subst">&amp;</span><span class="literal">gt</span>;
+</code></pre><p>这里说明下： docBase的值为 Tomcat目录下webapps\solr目录，也就是，自动创建出来的那个solr目录. Environment节点的Value属性的值为：自己建立的\solr-tomcat\solr目录。请各位读者注意不要写错！ - 打开浏览器，输入 : htpp://localhost:8080/solr/admin/ （其中的端口根据情况输入 默认是8080） 就可以访问solr服务了 - 成功显示如下界面就表示成功了。 我安装了solr 4.2</p>
+<h3 id="常见问题">常见问题</h3><p>请一定要注意，务必仔细配置好solr.home ，作者就因为写错了单词，少写了一级目录，导致安装没有成功的。同时还需要注意的是，在自己创建了solr.xml这个文件后，请务必重启tomcat，否则是无法生效的，也会导致安装失败的。</p>
+<p>参考资料：<a href="http://wiki.apache.org/solr/" target="_blank" rel="external">http://wiki.apache.org/solr/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2013/05/05/solr-installer/" data-id="cic2uu9gv000p5ksk23mhchl8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/APP项目/">APP项目</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/">ASP.NET</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/开源类库/">开源类库</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/生活/">生活</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr/">Solr</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/阅读/">阅读</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2013/">2013</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2014/">2014</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASCII/">ASCII</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Float/">Float</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GTD/">GTD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IRequiresSessionState/">IRequiresSessionState</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Server/">SQL Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL-Rewrite/">URL Rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unicode/">Unicode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XADataSource/">XADataSource</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ashx/">ashx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log4net/">log4net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中文/">中文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人/">人</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好奇心/">好奇心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/守时/">守时</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心智/">心智</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间/">时间</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/暂停/">暂停</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未加载/">未加载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序集/">程序集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程浩/">程浩</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/站在两个世界的边缘/">站在两个世界的边缘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/统计/">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚心/">虚心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机值/">随机值</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2013/" style="font-size: 10px;">2013</a> <a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/ASCII/" style="font-size: 10px;">ASCII</a> <a href="/tags/Float/" style="font-size: 10px;">Float</a> <a href="/tags/GTD/" style="font-size: 10px;">GTD</a> <a href="/tags/IRequiresSessionState/" style="font-size: 10px;">IRequiresSessionState</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/SQL-Server/" style="font-size: 15px;">SQL Server</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/URL-Rewrite/" style="font-size: 10px;">URL Rewrite</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/XADataSource/" style="font-size: 10px;">XADataSource</a> <a href="/tags/ashx/" style="font-size: 10px;">ashx</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/log4net/" style="font-size: 10px;">log4net</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/中文/" style="font-size: 10px;">中文</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/人/" style="font-size: 10px;">人</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/好奇心/" style="font-size: 10px;">好奇心</a> <a href="/tags/守时/" style="font-size: 10px;">守时</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心智/" style="font-size: 10px;">心智</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/时间/" style="font-size: 15px;">时间</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/暂停/" style="font-size: 10px;">暂停</a> <a href="/tags/未加载/" style="font-size: 10px;">未加载</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/程序集/" style="font-size: 10px;">程序集</a> <a href="/tags/程浩/" style="font-size: 10px;">程浩</a> <a href="/tags/站在两个世界的边缘/" style="font-size: 10px;">站在两个世界的边缘</a> <a href="/tags/统计/" style="font-size: 10px;">统计</a> <a href="/tags/虚心/" style="font-size: 10px;">虚心</a> <a href="/tags/随机值/" style="font-size: 10px;">随机值</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/">Velocity 基本语法</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/20/mac-shell-e6-b7-bb-e5-8a-a0vpn-e8-b7-af-e7-94-b1/">Mac shell 添加VPN 路由</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/06/mac-e4-bc-9a-e7-bb-99-e4-bd-a0-e4-b8-80-e4-ba-9b-e6-ac-a3-e5-96-9c/">Mac会给你一些欣喜</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/27/java-e8-8e-b7-e5-8f-96-e6-9c-ac-e6-9c-88-e6-88-96-e6-9f-90-e6-9c-88-e7-9a-84-e7-ac-ac-e4-b8-80-e5-a4-a9-e5-92-8c-e6-9c-80-e5-90-8e-e4-b8-80-e5-a4-a9/">java获取本月或某月的第一天和最后一天</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 jsonnode<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Velocity 基本语法 | JsonNode的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Velocity 基本语法Velocity 是一个基于 Java 的模板引擎框架，提供的模板语言可以使用在 Java 中定义的对象和变量上。Velocity 是 Apache 基金会的项目，开发的目标是分离 MVC 模式中的持久化层和业务层。但是在实际应用过程中，Velocity 不仅仅被用在了 MVC 的架构中，还可以被用在以下一些场景中。
+
+Web 应用：开发者在不使用 JSP 的情况下，可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Velocity 基本语法">
+<meta property="og:url" content="http://www.jsonnode.com/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/index.html">
+<meta property="og:site_name" content="JsonNode的博客">
+<meta property="og:description" content="Velocity 基本语法Velocity 是一个基于 Java 的模板引擎框架，提供的模板语言可以使用在 Java 中定义的对象和变量上。Velocity 是 Apache 基金会的项目，开发的目标是分离 MVC 模式中的持久化层和业务层。但是在实际应用过程中，Velocity 不仅仅被用在了 MVC 的架构中，还可以被用在以下一些场景中。
+
+Web 应用：开发者在不使用 JSP 的情况下，可以">
+<meta property="og:updated_time" content="2015-07-14T03:01:40.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Velocity 基本语法">
+<meta name="twitter:description" content="Velocity 基本语法Velocity 是一个基于 Java 的模板引擎框架，提供的模板语言可以使用在 Java 中定义的对象和变量上。Velocity 是 Apache 基金会的项目，开发的目标是分离 MVC 模式中的持久化层和业务层。但是在实际应用过程中，Velocity 不仅仅被用在了 MVC 的架构中，还可以被用在以下一些场景中。
+
+Web 应用：开发者在不使用 JSP 的情况下，可以">
+  
+    <link rel="alternative" href="/atom.xml" title="JsonNode的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JsonNode的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.jsonnode.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/" class="article-date">
+  <time datetime="2015-07-14T02:48:49.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Velocity 基本语法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Velocity_基本语法">Velocity 基本语法</h1><p>Velocity 是一个基于 Java 的模板引擎框架，提供的模板语言可以使用在 Java 中定义的对象和变量上。Velocity 是 Apache 基金会的项目，开发的目标是分离 MVC 模式中的持久化层和业务层。但是在实际应用过程中，Velocity 不仅仅被用在了 MVC 的架构中，还可以被用在以下一些场景中。</p>
+<ol>
+<li><p>Web 应用：开发者在不使用 JSP 的情况下，可以用 Velocity 让 HTML 具有动态内容的特性。</p>
+</li>
+<li><p>源代码生成：Velocity 可以被用来生成 Java 代码、SQL 或者 PostScript。有很多开源和商业开发的软件是使用 Velocity 来开发的。</p>
+</li>
+<li><p>自动 Email：很多软件的用户注册、密码提醒或者报表都是使用 Velocity 来自动生成的。使用 Velocity 可以在文本文件里面生成邮件内容，而不是在 Java 代码中拼接字符串。</p>
+</li>
+<li><p>转换 xml：Velocity 提供一个叫 Anakia 的 ant 任务，可以读取 XML 文件并让它能够被 Velocity 模板读取。一个比较普遍的应用是将 xdoc 文档转换成带样式的 HTML 文件。</p>
+</li>
+</ol>
+<p>基本模板语言语法使用<br>在 hellovelocity.vm 里面可以看到很多以 <code>#</code>和 <code>$</code>符开头的内容，这些都是 Velocity 的语法。在 Velocity 中所有的关键字都是以 <code>#</code> 开头的，而所有的变量则是以<code>$</code>开头。Velocity 的语法类似于 JSP 中的 JSTL，甚至可以定义类似于函数的宏，下面来看看具体的语法规则。<br>一、变量<br>和我们所熟知的其他编程语言一样，Velocity 也可以在模板文件中有变量的概念。<br><strong>变量定义</strong></p>
+<p><code>#set($name =“velocity”)</code></p>
+<p>等号后面的字符串 Velocity 引擎将重新解析，例如出现以<code>$</code>开始的字符串时，将做变量的替换。</p>
+<p><code>#set($hello =“hello $name”)</code></p>
+<p>上面的这个等式将会给<code>$hello</code> 赋值为“hello velocity”</p>
+<p><strong>变量的使用</strong></p>
+<p>在模板文件中使用<code>$name</code> 或者<code>${name}</code> 来使用定义的变量。推荐使用<code>${name}</code> 这种格式，因为在模板中同时可能定义了类似<code>$name</code> 和<code>$names</code> 的两个变量，如果不选用大括号的话，引擎就没有办法正确识别<code>$names</code> 这个变量。<br>对于一个复杂对象类型的变量，例如<code>$person</code>，可以使用<code>${person.name}</code> 来访问 person 的 name 属性。值得注意的是，这里的<code>${person.name}</code> 并不是直接访问 person 的 name 属性，而是访问 person 的 getName() 方法，所以<code>${person.name}</code> 和<code>${person.getName()}</code> 是一样的。</p>
+<p><strong>变量赋值</strong></p>
+<p>在第一小点中，定义了一个变量，同时给这个变量赋了值。对于 Velocity 来说，变量是弱数据类型的，可以在赋了一个 String 给变量之后再赋一个数字或者数组给它。可以将以下六种数据类型赋给一个 Velocity 变量：变量引用, 字面字符串, 属性引用, 方法引用, 字面数字, 数组列表。</p>
+<p>`#set($foo = $bar)</p>
+<pre><code>#<span class="function"><span class="title">set</span><span class="params">(<span class="variable">$foo</span> =“hello”)</span></span>
+#<span class="function"><span class="title">set</span><span class="params">(<span class="variable">$foo</span>.name = <span class="variable">$bar</span>.name)</span></span>
+#<span class="function"><span class="title">set</span><span class="params">(<span class="variable">$foo</span>.name = <span class="variable">$bar</span>.getName(<span class="variable">$arg</span>)</span></span>)
+#<span class="function"><span class="title">set</span><span class="params">(<span class="variable">$foo</span> = <span class="number">123</span>)</span></span>
+#<span class="function"><span class="title">set</span><span class="params">(<span class="variable">$foo</span> = [“foo”,<span class="variable">$bar</span>])</span></span>`
+</code></pre><p>二、循环<br>在 Velocity 中循环语句的语法结构如下：</p>
+<p>`#foreach($element in $list)<br>     This is $element<br>     $velocityCount</p>
+<pre><code><span class="preprocessor">#<span class="keyword">end</span>`</span>
+</code></pre><p>Velocity 引擎会将 list 中的值循环赋给 element 变量，同时会创建一个<code>$velocityCount</code> 的变量作为计数，从 1 开始，每次循环都会加 1.<br>三、条件语句<br>条件语句的语法如下</p>
+<p>`#if(condition)<br>    …</p>
+<pre><code><span class="preprocessor">#<span class="keyword">elseif</span>(condition)</span>
+...
+<span class="preprocessor">#<span class="keyword">else</span></span>
+...
+<span class="preprocessor">#<span class="keyword">end</span>`</span>
+</code></pre><p>四、关系操作符<br>Velocity 引擎提供了 AND、OR 和 NOT 操作符，分别对应&amp;&amp;、||和! 例如：</p>
+<p>`#if($foo &amp;&amp; $bar)</p>
+<pre><code><span class="preprocessor">#<span class="keyword">end</span>`</span>
+</code></pre><p>五、宏<br>Velocity 中的宏可以理解为函数定义。定义的语法如下：</p>
+<p>`#macro(macroName arg1 arg2 …)<br>    …</p>
+<pre><code><span class="preprocessor">#<span class="keyword">end</span>`</span>
+</code></pre><p>调用这个宏的语法是：</p>
+<p><code>#macroName(arg1 arg2 …)</code></p>
+<p>这里的参数之间使用空格隔开，下面是定义和使用 Velocity 宏的例子：</p>
+<p>`#macro(sayHello $name)<br>    hello $name</p>
+<pre><code><span class="id">#end</span>
+#<span class="function"><span class="title">sayHello</span><span class="params">(“velocity”)</span></span>`
+</code></pre><p>输出的结果为 hello velocity</p>
+<p>六、<code>#parse</code> 和 <code>#include</code></p>
+<p><code>#parse</code> 和 <code>#include</code> 指令的功能都是在外部引用文件，而两者的区别是，<code>#parse</code> 会将引用的内容当成类似于源码文件，会将内容在引入的地方进行解析，<code>#include</code> 是将引入文件当成资源文件，会将引入内容原封不动地以文本输出。分别看以下例子：</p>
+<p><code>foo.vm</code> 文件：</p>
+<p><code>#set($name =“velocity”)</code></p>
+<p><code>parse.vm</code>：</p>
+<p><code>#parse(“foo.vm”)</code></p>
+<p>输出结果为：velocity</p>
+<p>include.vm：</p>
+<p><code>#include(“foo.vm”)</code></p>
+<p>输出结果为：<code>#set($name =“velocity”)</code></p>
+<p>以上内容包含了部分 Velocity 的语法，详细的语法内容可以参考 Velocity 的官方文档。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/" data-id="cic2uu9gh00085ksk4fsk2v3p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/velocity/">velocity</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/14/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/20/mac-shell-e6-b7-bb-e5-8a-a0vpn-e8-b7-af-e7-94-b1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac shell 添加VPN 路由</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/APP项目/">APP项目</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/">ASP.NET</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/开源类库/">开源类库</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/生活/">生活</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr/">Solr</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/阅读/">阅读</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2013/">2013</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2014/">2014</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASCII/">ASCII</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Float/">Float</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GTD/">GTD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IRequiresSessionState/">IRequiresSessionState</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Server/">SQL Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL-Rewrite/">URL Rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unicode/">Unicode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XADataSource/">XADataSource</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ashx/">ashx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log4net/">log4net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中文/">中文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人/">人</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好奇心/">好奇心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/守时/">守时</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心智/">心智</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间/">时间</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/暂停/">暂停</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未加载/">未加载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序集/">程序集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程浩/">程浩</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/站在两个世界的边缘/">站在两个世界的边缘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/统计/">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚心/">虚心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机值/">随机值</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2013/" style="font-size: 10px;">2013</a> <a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/ASCII/" style="font-size: 10px;">ASCII</a> <a href="/tags/Float/" style="font-size: 10px;">Float</a> <a href="/tags/GTD/" style="font-size: 10px;">GTD</a> <a href="/tags/IRequiresSessionState/" style="font-size: 10px;">IRequiresSessionState</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/SQL-Server/" style="font-size: 15px;">SQL Server</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/URL-Rewrite/" style="font-size: 10px;">URL Rewrite</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/XADataSource/" style="font-size: 10px;">XADataSource</a> <a href="/tags/ashx/" style="font-size: 10px;">ashx</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/log4net/" style="font-size: 10px;">log4net</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/中文/" style="font-size: 10px;">中文</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/人/" style="font-size: 10px;">人</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/好奇心/" style="font-size: 10px;">好奇心</a> <a href="/tags/守时/" style="font-size: 10px;">守时</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心智/" style="font-size: 10px;">心智</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/时间/" style="font-size: 15px;">时间</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/暂停/" style="font-size: 10px;">暂停</a> <a href="/tags/未加载/" style="font-size: 10px;">未加载</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/程序集/" style="font-size: 10px;">程序集</a> <a href="/tags/程浩/" style="font-size: 10px;">程浩</a> <a href="/tags/站在两个世界的边缘/" style="font-size: 10px;">站在两个世界的边缘</a> <a href="/tags/统计/" style="font-size: 10px;">统计</a> <a href="/tags/虚心/" style="font-size: 10px;">虚心</a> <a href="/tags/随机值/" style="font-size: 10px;">随机值</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/">Velocity 基本语法</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/20/mac-shell-e6-b7-bb-e5-8a-a0vpn-e8-b7-af-e7-94-b1/">Mac shell 添加VPN 路由</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/06/mac-e4-bc-9a-e7-bb-99-e4-bd-a0-e4-b8-80-e4-ba-9b-e6-ac-a3-e5-96-9c/">Mac会给你一些欣喜</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/27/java-e8-8e-b7-e5-8f-96-e6-9c-ac-e6-9c-88-e6-88-96-e6-9f-90-e6-9c-88-e7-9a-84-e7-ac-ac-e4-b8-80-e5-a4-a9-e5-92-8c-e6-9c-80-e5-90-8e-e4-b8-80-e5-a4-a9/">java获取本月或某月的第一天和最后一天</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 jsonnode<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 &#39;master..xp_sqljdbc_xa_init&#39; | JsonNode的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 ‘master..xp_sqljdbc_xa_init’配置JTA SQL Server XADataSource参考：https://msdn.microsoft.com/zh-cn/library/aa342335.aspx
+使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 'master..xp_sqljdbc_xa_init'">
+<meta property="og:url" content="http://www.jsonnode.com/2015/02/03/javax-transaction-xa-xaexception-java-sql-sqlexception-e6-97-a0-e6-b3-95-e5-88-9b-e5-bb-ba-xa-e6-8e-a7-e5-88-b6-e8-bf-9e-e6-8e-a5-e3-80-82-e9-94-99-e8-af-af-e6-9c-aa-e8-83-bd-e6-89-be-e5-88-b0/index.html">
+<meta property="og:site_name" content="JsonNode的博客">
+<meta property="og:description" content="javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 ‘master..xp_sqljdbc_xa_init’配置JTA SQL Server XADataSource参考：https://msdn.microsoft.com/zh-cn/library/aa342335.aspx
+使用">
+<meta property="og:updated_time" content="2015-07-14T03:01:40.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 'master..xp_sqljdbc_xa_init'">
+<meta name="twitter:description" content="javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 ‘master..xp_sqljdbc_xa_init’配置JTA SQL Server XADataSource参考：https://msdn.microsoft.com/zh-cn/library/aa342335.aspx
+使用">
+  
+    <link rel="alternative" href="/atom.xml" title="JsonNode的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JsonNode的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.jsonnode.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javax-transaction-xa-xaexception-java-sql-sqlexception-e6-97-a0-e6-b3-95-e5-88-9b-e5-bb-ba-xa-e6-8e-a7-e5-88-b6-e8-bf-9e-e6-8e-a5-e3-80-82-e9-94-99-e8-af-af-e6-9c-aa-e8-83-bd-e6-89-be-e5-88-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/03/javax-transaction-xa-xaexception-java-sql-sqlexception-e6-97-a0-e6-b3-95-e5-88-9b-e5-bb-ba-xa-e6-8e-a7-e5-88-b6-e8-bf-9e-e6-8e-a5-e3-80-82-e9-94-99-e8-af-af-e6-9c-aa-e8-83-bd-e6-89-be-e5-88-b0/" class="article-date">
+  <time datetime="2015-02-03T06:56:59.000Z" itemprop="datePublished">2015-02-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>►<a class="article-category-link" href="/categories/JAVA/SQL-Server/">SQL Server</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 &#39;master..xp_sqljdbc_xa_init&#39;
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javax-transaction-xa-XAException:_java-sql-SQLException:_无法创建_XA_控制连接。错误:_未能找到存储过程_‘master-xp_sqljdbc_xa_init’">javax.transaction.xa.XAException: java.sql.SQLException: 无法创建 XA 控制连接。错误: 未能找到存储过程 ‘master..xp_sqljdbc_xa_init’</h2><p>配置JTA SQL Server XADataSource参考：<a href="https://msdn.microsoft.com/zh-cn/library/aa342335.aspx" title="了解 XA 事务" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/library/aa342335.aspx</a></p>
+<p>使用 JDBC 驱动程序 :<a href="https://msdn.microsoft.com/zh-cn/library/ms378526(v=sql.110" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/library/ms378526(v=sql.110).aspx</a>.aspx “使用 JDBC 驱动程序”)</p>
+<p>JDBC下载地址：<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=11774" title="适用于 SQL Server 的 Microsoft JDBC Drivers 4.1 和 4.0" target="_blank" rel="external">http://www.microsoft.com/zh-CN/download/details.aspx?id=11774</a></p>
+<ol>
+<li>sqljdbc_4.0\chs\auth\x86(x64|IA64)\sqljdbc_auth.dll放入WINDOWS\system32中</li>
+<li>sqljdbc_4.0\chs\xa\x86(x64|IA64)\sqljdbc_xa.dll放入Microsoft SQLServer\MSSQL\Binn\sqljdbc_xa.dll</li>
+<li>执行xa_install.sql</li>
+</ol>
+<p>如果要同时使用 XA 数据源和 Microsoft 分布式事务处理协调器 (MS DTC)来处理分布式事务，则需要执行以下步骤</p>
+<p>（1）在 Windows XP 和 Windows Server 2003 上：</p>
+<ol>
+<li>在“控制面板”中，打开“管理工具”，然后打开“组件服务”。也可以单击“开始”按钮，单击“运行”，在“打开”框中键入dcomcnfg，然后按“确定”打开“组件服务”。</li>
+<li>展开“组件服务”、“计算机”，右键单击“我的电脑”，然后选择“属性”。</li>
+<li>单击“MSDTC”选项卡，再单击“安全性配置”。</li>
+<li>选中“启用 XA 事务”复选框，然后单击“确定”。这将使 MS DTC 服务重新启动。</li>
+<li>再次单击“确定”以关闭“属性”对话框，然后关闭“组件服务”。</li>
+<li>停止 SQL Server，然后重新启动，以确保它与 MS DTC 更改同步。</li>
+</ol>
+<p>（2）在Win8或Server 2008上：</p>
+<ol>
+<li>在“控制面板”中，打开“管理工具”，然后打开“组件服务”。也可以单击“开始”按钮，单击“运行”，在“打开”框中键入dcomcnfg，然后按“确定”打开“组件服务”。</li>
+<li>展开“组件服务”\“计算机”\”Distribute Transaction Coordinator”，右键单击“本地DTC”，然后选择“属性”。</li>
+<li>单击“安全”选项卡，再单击“启用XA事务”。</li>
+<li>然后单击“确定”。这将使 MS DTC 服务重新启动。</li>
+<li>再次单击“确定”以关闭“属性”对话框，然后关闭“组件服务”。</li>
+<li>停止 SQL Server，然后重新启动，以确保它与 MS DTC 更改同步。</li>
+</ol>
+<p>注：在这些配置完成以后如果还出现：</p>
+<p>错误：atomikos:error in recovery。</p>
+<ol>
+<li>驱动程序有问题。即sqljdbc4.jar。我之前遇到这种问题后就重新在Miscrosoft官网上下载了“sqljdbc_3.0.1301.101_chs.exe”;解压后，所有的配置都用该解压包中的文件。包括（sqljdbc_xa.dll）</li>
+<li>SQL Server 2000用的是x86(即32)位的文件来配置。因为通过查询分析器输入”select @@version”来查看SQL的版本后就会发现，即使操作系统是Server 2003 X64位，但SQL Server 2000仍然是32位的。</li>
+<li>在WIn8上面输入“select @@version”后得到版本号“Microsoft SQL Server 2008 R2 (RTM) - 10.50.1600.1 (X64) Apr 2 2010 15:48:46 Copyright (c) Microsoft Corporation Developer Edition (64-bit) on Windows NT 6.2 <x64> (Build 9200: ) ”，由此可看出SQL Server是X64的。</x64></li>
+<li>SQL Server 2000在配置JTA XADataSource时，如果用sqljdbc.jar包，里面是没有com.microsoft.sqlserver.jdbc.SQLServerXADataSource该类的。因此SQL Server 2000也用sqljdbc4.jar该包来配置。</li>
+</ol>
+<p>—EOF—</p>
+<p>No.304</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jsonnode.com/2015/02/03/javax-transaction-xa-xaexception-java-sql-sqlexception-e6-97-a0-e6-b3-95-e5-88-9b-e5-bb-ba-xa-e6-8e-a7-e5-88-b6-e8-bf-9e-e6-8e-a5-e3-80-82-e9-94-99-e8-af-af-e6-9c-aa-e8-83-bd-e6-89-be-e5-88-b0/" data-id="cic2uu9hw001n5kskne0iyi3l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Server/">SQL Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XADataSource/">XADataSource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/27/java-e8-8e-b7-e5-8f-96-e6-9c-ac-e6-9c-88-e6-88-96-e6-9f-90-e6-9c-88-e7-9a-84-e7-ac-ac-e4-b8-80-e5-a4-a9-e5-92-8c-e6-9c-80-e5-90-8e-e4-b8-80-e5-a4-a9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java获取本月或某月的第一天和最后一天
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/26/e9-87-8d-e6-96-b0-e5-bc-80-e5-a7-8b-ef-bc-8cgo-ef-bc-81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">重新开始，Go！</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/APP项目/">APP项目</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/">ASP.NET</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-NET/开源类库/">开源类库</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/生活/">生活</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Solr/">Solr</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/阅读/">阅读</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2013/">2013</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2014/">2014</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASCII/">ASCII</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Float/">Float</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GTD/">GTD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IRequiresSessionState/">IRequiresSessionState</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Server/">SQL Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL-Rewrite/">URL Rewrite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unicode/">Unicode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XADataSource/">XADataSource</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ashx/">ashx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log4net/">log4net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中文/">中文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人/">人</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/好奇心/">好奇心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/守时/">守时</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心智/">心智</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间/">时间</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/暂停/">暂停</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未加载/">未加载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序集/">程序集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程浩/">程浩</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/站在两个世界的边缘/">站在两个世界的边缘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/统计/">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚心/">虚心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机值/">随机值</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2013/" style="font-size: 10px;">2013</a> <a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/ASCII/" style="font-size: 10px;">ASCII</a> <a href="/tags/Float/" style="font-size: 10px;">Float</a> <a href="/tags/GTD/" style="font-size: 10px;">GTD</a> <a href="/tags/IRequiresSessionState/" style="font-size: 10px;">IRequiresSessionState</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/SQL-Server/" style="font-size: 15px;">SQL Server</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/URL-Rewrite/" style="font-size: 10px;">URL Rewrite</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/XADataSource/" style="font-size: 10px;">XADataSource</a> <a href="/tags/ashx/" style="font-size: 10px;">ashx</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/log4net/" style="font-size: 10px;">log4net</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/中文/" style="font-size: 10px;">中文</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/人/" style="font-size: 10px;">人</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/好奇心/" style="font-size: 10px;">好奇心</a> <a href="/tags/守时/" style="font-size: 10px;">守时</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心智/" style="font-size: 10px;">心智</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/时间/" style="font-size: 15px;">时间</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/暂停/" style="font-size: 10px;">暂停</a> <a href="/tags/未加载/" style="font-size: 10px;">未加载</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/程序集/" style="font-size: 10px;">程序集</a> <a href="/tags/程浩/" style="font-size: 10px;">程浩</a> <a href="/tags/站在两个世界的边缘/" style="font-size: 10px;">站在两个世界的边缘</a> <a href="/tags/统计/" style="font-size: 10px;">统计</a> <a href="/tags/虚心/" style="font-size: 10px;">虚心</a> <a href="/tags/随机值/" style="font-size: 10px;">随机值</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/velocity-e5-9f-ba-e6-9c-ac-e8-af-ad-e6-b3-95/">Velocity 基本语法</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/20/mac-shell-e6-b7-bb-e5-8a-a0vpn-e8-b7-af-e7-94-b1/">Mac shell 添加VPN 路由</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/06/mac-e4-bc-9a-e7-bb-99-e4-bd-a0-e4-b8-80-e4-ba-9b-e6-ac-a3-e5-96-9c/">Mac会给你一些欣喜</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/27/java-e8-8e-b7-e5-8f-96-e6-9c-ac-e6-9c-88-e6-88-96-e6-9f-90-e6-9c-88-e7-9a-84-e7-ac-ac-e4-b8-80-e5-a4-a9-e5-92-8c-e6-9c-80-e5-90-8e-e4-b8-80-e5-a4-a9/">java获取本月或某月的第一天和最后一天</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 jsonnode<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
