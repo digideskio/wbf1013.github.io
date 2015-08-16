@@ -49,6 +49,53 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-08-16T02:41:23.000Z"><a href="/2015/08/16/shadowsocks自定义代理规则user-rule设置方法/">2015-08-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/08/16/shadowsocks自定义代理规则user-rule设置方法/">shadowsocks自定义代理规则user-rule设置方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>shadowsocks支持用户自定义代理规则，更新到最新的版本的shadowsocks后， 在shadowsocks文件夹内会有一个user-rule.txt文档，如果用户需要添加自定义代理规则，只需要编辑user-rule.txt文件</p>
+<p>自定义代理规则的设置语法与GFWlist相同，即adblockplus过滤规则。简要描述如下：</p>
+<ol>
+<li>通配符支持，如 <em>.example.com/</em> 实际书写时可省略<em> 如.example.com/ 意即</em>.example.com/*</li>
+<li>正则表达式支持，以\开始和结束， 如 [\w]+:\/\/example.com\</li>
+<li>例外规则 @@，如 @@<em>.example.com/</em> 满足@@后规则的地址不使用代理</li>
+<li>匹配地址开始和结尾 |，如 |<a href="http://example.com" target="_blank" rel="external">http://example.com</a> 、example.com|分别表示以 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 开始和以 example.com 结束的地址</li>
+<li>|| 标记，如 ||example.com 则 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 、 <a href="https://example.com" target="_blank" rel="external">https://example.com</a> 、 ftp://example.com等地址均满足条件</li>
+<li>注释 ! 如 ! Comment</li>
+</ol>
+<p>例如你要添加www.ip138.com、ip.cn两个网站到自定义代理规则，编辑user-rule.txt文件，在文件最后加入：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!测试user-<span class="keyword">rule</span>生效</span><br><span class="line">||ip138.com</span><br><span class="line">||ip.cn</span><br></pre></td></tr></table></figure>
+<p>备注：user-rule.txt一行只能有一条代理规则。</p>
+<p>user-rule.txt中的规则并不能直接被shadowsocks使用，如要添加到user-rule.txt中的规则生效，你还要执行下面重要的一步：更新本地的PAC，更新后user-rule.txt中的自定义规则会添加到PAC.txt文件内。（备注：每次编辑完user-rule.txt后，均需执行“从GFWList更新本地PAC”，使本次规则也生效。）</p>
+<p>此时你再打开 <a href="http://www.ip138.com" target="_blank" rel="external">http://www.ip138.com</a> 或者 <a href="http://ip.cn" target="_blank" rel="external">http://ip.cn</a> 时，都会通过shadowsocks访问。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-07-14T02:54:53.624Z"><a href="/2015/07/14/hello-world/">2015-07-14</a></time>
       
       
@@ -582,59 +629,6 @@ IsNullOrWhiteSpace
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-09-21T16:03:28.000Z"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">2014-09-22</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">Maven 安装</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="Maven_安装">Maven 安装</h1><p>简单记录maven的安装步骤：</p>
-<ol>
-<li>在安装maven之前，先确保已经安装JDK1.6及以上版本，并且配置好环境变量。</li>
-<li><p>下载maven3，最新版本是Maven3.2.3 ，下载地址：<a href="http://maven.apache.org/download.html" target="_blank" rel="external">http://maven.apache.org/download.html</a></p>
-<p>下载apache-maven-3.2.3-bin.zip文件后，并解压到 C:\maven\apache-maven-3.2.3</p>
-</li>
-<li><p>配置maven3的环境变量：先配置M2_HOME的环境变量，新建一个系统变量：M2_HOME , 路径是：C:\maven\apache-maven-3.2.3，如图所示： <img src="http://pic.yupoo.com/wbf1013_v/E4HkRFpB/DIvNZ.png" alt="M2_Home配置"></p>
-</li>
-<li><p>再配置path环境变量，在path值的末尾添加”%M2_HOME%\bin”，如下图所示 <img src="http://pic.yupoo.com/wbf1013_v/E4HkSEtG/1ZU73.png" alt="Path Maven 配置">；</p>
-</li>
-<li><p>点击确定之后，打开cmd窗口：输入 mvn -v,出现如下内容表示安装成功。</p>
-</li>
-</ol>
-<p><img src="http://pic.yupoo.com/wbf1013_v/E4HkSOd9/lNpGV.png" alt="Maven安装成功"></p>
-<p>给maven添加本地仓库</p>
-<ol>
-<li>打开本地存放maven目录（或者maven安装目录，我的安装目录是：C:\maven\apache-maven-3.2.3，这里没多大影响，我只是不同的项目有不同的仓库）： 比如我的本地存放目录是：C:\maven\Maven_Local_Rep</li>
-<li>打开conf文件夹下的settings.xml文件，找到第53行，把注释去掉，修改成： <localrepository>D:/Util/maven/maven-dependcies</localrepository> 当然了，前提是在某个路径下，手动建立了一个名为 maven-dependcies的文件夹，然后把本地仓库指向该路径。</li>
-</ol>
-<p>—EOF—</p>
-<p>No.304</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -722,6 +716,8 @@ IsNullOrWhiteSpace
     <li><a href="/tags/java/">java</a><small>1</small></li>
   
     <li><a href="/tags/log4net/">log4net</a><small>1</small></li>
+  
+    <li><a href="/tags/shadowsocks-user-rule/">shadowsocks, user rule</a><small>1</small></li>
   
     <li><a href="/tags/velocity/">velocity</a><small>1</small></li>
   

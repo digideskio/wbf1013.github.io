@@ -49,6 +49,59 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-09-21T16:03:28.000Z"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">2014-09-22</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">Maven 安装</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="Maven_安装">Maven 安装</h1><p>简单记录maven的安装步骤：</p>
+<ol>
+<li>在安装maven之前，先确保已经安装JDK1.6及以上版本，并且配置好环境变量。</li>
+<li><p>下载maven3，最新版本是Maven3.2.3 ，下载地址：<a href="http://maven.apache.org/download.html" target="_blank" rel="external">http://maven.apache.org/download.html</a></p>
+<p>下载apache-maven-3.2.3-bin.zip文件后，并解压到 C:\maven\apache-maven-3.2.3</p>
+</li>
+<li><p>配置maven3的环境变量：先配置M2_HOME的环境变量，新建一个系统变量：M2_HOME , 路径是：C:\maven\apache-maven-3.2.3，如图所示： <img src="http://pic.yupoo.com/wbf1013_v/E4HkRFpB/DIvNZ.png" alt="M2_Home配置"></p>
+</li>
+<li><p>再配置path环境变量，在path值的末尾添加”%M2_HOME%\bin”，如下图所示 <img src="http://pic.yupoo.com/wbf1013_v/E4HkSEtG/1ZU73.png" alt="Path Maven 配置">；</p>
+</li>
+<li><p>点击确定之后，打开cmd窗口：输入 mvn -v,出现如下内容表示安装成功。</p>
+</li>
+</ol>
+<p><img src="http://pic.yupoo.com/wbf1013_v/E4HkSOd9/lNpGV.png" alt="Maven安装成功"></p>
+<p>给maven添加本地仓库</p>
+<ol>
+<li>打开本地存放maven目录（或者maven安装目录，我的安装目录是：C:\maven\apache-maven-3.2.3，这里没多大影响，我只是不同的项目有不同的仓库）： 比如我的本地存放目录是：C:\maven\Maven_Local_Rep</li>
+<li>打开conf文件夹下的settings.xml文件，找到第53行，把注释去掉，修改成： <localrepository>D:/Util/maven/maven-dependcies</localrepository> 当然了，前提是在某个路径下，手动建立了一个名为 maven-dependcies的文件夹，然后把本地仓库指向该路径。</li>
+</ol>
+<p>—EOF—</p>
+<p>No.304</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-09-02T15:39:20.000Z"><a href="/2014/09/02/e5-b7-a5-e4-bd-9c-e4-b8-8e-e7-94-9f-e6-b4-bb-e5-a6-82-e4-bd-95-e5-b9-b3-e8-a1-a1-ef-bc-9f/">2014-09-02</a></time>
       
       
@@ -481,47 +534,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-16T02:34:49.000Z"><a href="/2014/05/16/e4-bd-a0-e7-9c-8b-ef-bc-8c-e6-83-85-e7-bb-aa-e6-b3-9b-e6-bb-a5-e4-ba-86/">2014-05-16</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/05/16/e4-bd-a0-e7-9c-8b-ef-bc-8c-e6-83-85-e7-bb-aa-e6-b3-9b-e6-bb-a5-e4-ba-86/">你看，情绪泛滥了</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>想写些东西，却不知道怎么写。最近的生活过的很古怪，总是会有一些奇怪的想法出现，然后去做一些令人觉得古怪，无聊甚至蛋疼的事。就拿昨天无缘无故地情绪泛滥，想走走。却又不知该从哪里走到哪里。上班时间很长，下班时间也比较晚，自己要是出去走走，那回到家就更晚了吧。那要怎么办呢？总得有个选择，那就提前下公交车走回家好了。这样应该会是一个两全的选择。有些人不理解我，我也不想多去解释，默默的做着自己愿意去做的事。不期望别人是否可以认同我。也罢，不可能让所有人都理解我。做些古怪的事情，反正已经不是第一次了。</p>
-<p>想想那些古怪奇葩的想法和行动，觉得这样so navie。</p>
-<p>我知道我自己一直封闭着自己，不愿去接受其他人的一些什么东西。一直都是以一个旁观者，局外人的身份在生活。这样的生活如此美好，而且没有什么压力可言。那不去参与的生活到底还可以过多久呢？ 活在自己的世界里总是很美好的。走走吧，说不定走到谁的生活里了。</p>
-<p>你好，生活！想想当初的微笑。</p>
-<p>来，我们来谈谈生活。</p>
-<p>早上公交车上 ，你的情绪又泛滥了吧， 看个公益广告，你居然开始两眼含泪了。  在你发现你快哭的那瞬间，你意识到是在公共场合，要是哭出来，会让周围的人觉得很奇怪。 你匆忙地看看周围，以忍住自己的的泪水。 你还无法把握你的情绪， 你为了封闭自己，你努力地把你感性的一面藏起来。 可是在潜意识下，你的感性很快就张扬起来。 你为了让别人看到你的理性。 你慢慢地变得冷漠， 变得不在乎， 不在乎那些爱你的人对你的爱。 你放弃了那些。</p>
-<p>唉， 算了 ，  情绪又要泛滥了。 你看， 那里有个坑。。。  哪里有啊？</p>
-<p>—EOF—</p>
-<p>No.304</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -611,6 +623,8 @@
     <li><a href="/tags/java/">java</a><small>1</small></li>
   
     <li><a href="/tags/log4net/">log4net</a><small>1</small></li>
+  
+    <li><a href="/tags/shadowsocks-user-rule/">shadowsocks, user rule</a><small>1</small></li>
   
     <li><a href="/tags/velocity/">velocity</a><small>1</small></li>
   

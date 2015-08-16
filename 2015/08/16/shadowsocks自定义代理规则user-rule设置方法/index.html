@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档：2014/9 | JsonNode的博客</title>
+  <title>shadowsocks自定义代理规则user-rule设置方法 | JsonNode的博客</title>
   <meta name="author" content="jsonnode">
+  
+  <meta name="description" content="shadowsocks支持用户自定义代理规则，更新到最新的版本的shadowsocks后， 在shadowsocks文件夹内会有一个user-rule.txt文档，如果用户需要添加自定义代理规则，只需要编辑user-rule.txt文件
+自定义代理规则的设置语法与GFWlist相同，即adblock">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="shadowsocks自定义代理规则user-rule设置方法"/>
   <meta property="og:site_name" content="JsonNode的博客"/>
 
   
@@ -42,37 +45,94 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2014/9</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-08-16T02:41:23.000Z"><a href="/2015/08/16/shadowsocks自定义代理规则user-rule设置方法/">2015-08-16</a></time>
+      
+      
+  
+    <h1 class="title">shadowsocks自定义代理规则user-rule设置方法</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <p>shadowsocks支持用户自定义代理规则，更新到最新的版本的shadowsocks后， 在shadowsocks文件夹内会有一个user-rule.txt文档，如果用户需要添加自定义代理规则，只需要编辑user-rule.txt文件</p>
+<p>自定义代理规则的设置语法与GFWlist相同，即adblockplus过滤规则。简要描述如下：</p>
+<ol>
+<li>通配符支持，如 <em>.example.com/</em> 实际书写时可省略<em> 如.example.com/ 意即</em>.example.com/*</li>
+<li>正则表达式支持，以\开始和结束， 如 [\w]+:\/\/example.com\</li>
+<li>例外规则 @@，如 @@<em>.example.com/</em> 满足@@后规则的地址不使用代理</li>
+<li>匹配地址开始和结尾 |，如 |<a href="http://example.com" target="_blank" rel="external">http://example.com</a> 、example.com|分别表示以 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 开始和以 example.com 结束的地址</li>
+<li>|| 标记，如 ||example.com 则 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 、 <a href="https://example.com" target="_blank" rel="external">https://example.com</a> 、 ftp://example.com等地址均满足条件</li>
+<li>注释 ! 如 ! Comment</li>
+</ol>
+<p>例如你要添加www.ip138.com、ip.cn两个网站到自定义代理规则，编辑user-rule.txt文件，在文件最后加入：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!测试user-<span class="keyword">rule</span>生效</span><br><span class="line">||ip138.com</span><br><span class="line">||ip.cn</span><br></pre></td></tr></table></figure>
+<p>备注：user-rule.txt一行只能有一条代理规则。</p>
+<p>user-rule.txt中的规则并不能直接被shadowsocks使用，如要添加到user-rule.txt中的规则生效，你还要执行下面重要的一步：更新本地的PAC，更新后user-rule.txt中的自定义规则会添加到PAC.txt文件内。（备注：每次编辑完user-rule.txt后，均需执行“从GFWList更新本地PAC”，使本次规则也生效。）</p>
+<p>此时你再打开 <a href="http://www.ip138.com" target="_blank" rel="external">http://www.ip138.com</a> 或者 <a href="http://ip.cn" target="_blank" rel="external">http://ip.cn</a> 时，都会通过shadowsocks访问。</p>
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2014-09-21T16:03:28.000Z"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">2014-09-22</a></time>
-            
-              <h1 class="title"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">Maven 安装</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2014-09-02T15:39:20.000Z"><a href="/2014/09/02/e5-b7-a5-e4-bd-9c-e4-b8-8e-e7-94-9f-e6-b4-bb-e5-a6-82-e4-bd-95-e5-b9-b3-e8-a1-a1-ef-bc-9f/">2014-09-02</a></time>
-            
-              <h1 class="title"><a href="/2014/09/02/e5-b7-a5-e4-bd-9c-e4-b8-8e-e7-94-9f-e6-b4-bb-e5-a6-82-e4-bd-95-e5-b9-b3-e8-a1-a1-ef-bc-9f/">工作与生活如何平衡？</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/shadowsocks-user-rule/">shadowsocks, user rule</a>
   </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://www.jsonnode.com/2015/08/16/shadowsocks自定义代理规则user-rule设置方法/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
