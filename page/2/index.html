@@ -49,6 +49,57 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-10-22T12:28:42.000Z"><a href="/2014/10/22/isnullorempty-e4-b8-8eisnullorwhitespace-e5-8c-ba-e5-88-ab/">2014-10-22</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/10/22/isnullorempty-e4-b8-8eisnullorwhitespace-e5-8c-ba-e5-88-ab/">IsNullOrEmpty与IsNullOrWhiteSpace区别</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="IsNullOrEmpty与IsNullOrWhiteSpace区别">IsNullOrEmpty与IsNullOrWhiteSpace区别</h2><p>IsNullOrEmpty</p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">IsNullOrEmpty</span>(<span class="params">String <span class="keyword">value</span></span>) </span>{
+    <span class="keyword">return</span> (<span class="keyword">value</span> == <span class="keyword">null</span> || <span class="keyword">value</span>.Length == <span class="number">0</span>);
+}
+`&lt;/pre&gt;
+
+IsNullOrWhiteSpace
+
+&lt;pre&gt;`<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">IsNullOrWhiteSpace</span>(<span class="params">String <span class="keyword">value</span></span>) </span>{
+    <span class="keyword">if</span> (<span class="keyword">value</span> == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;
+
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &amp;lt; <span class="keyword">value</span>.Length; i++) {
+        <span class="keyword">if</span>(!Char.IsWhiteSpace(<span class="keyword">value</span>[i])) <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+
+    <span class="keyword">return</span> <span class="keyword">true</span>;
+}
+</code></pre><p>—EOF—</p>
+<p>No.304</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-09-21T16:03:28.000Z"><a href="/2014/09/22/maven-e5-ae-89-e8-a3-85/">2014-09-22</a></time>
       
       
@@ -482,58 +533,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-05-25T04:04:26.000Z"><a href="/2014/05/25/e5-a5-87-e7-89-b9-e7-9a-84-e4-b8-80-e7-94-9f/">2014-05-25</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/05/25/e5-a5-87-e7-89-b9-e7-9a-84-e4-b8-80-e7-94-9f/">奇特的一生</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="奇特的一生">奇特的一生</h2><p>人的一生或精彩，或虚度。怎样过奇特的一生？在看完《奇特的一生》之后，莫名的会去思考这样的问题？去做一些令自己疯狂的事，还是去做一些令自己幸福的事？人总是在期待一些美好的事物会到来～有的时候，幸福来的太突然……</p>
-<p>好，回到《奇特的一生》的这本书，主人公是一位俄国的逝者——柳比歇夫。他的一生就是奇特的一生，在他去世之后，才开始有人对他有一些尊敬的看法。他是一位科学家，那么他是怎样过的这奇特的一生呢？</p>
-<p>首先，我们应该思考这样一个问题，怎样生活得更好？柳比歇夫就有自己的一套方法，而且他坚持了一生，从而让他具有这奇特的一生，让他人觉得不可思议。他的方法就是“时间统计法”，他可以不用借助其他计时器，可以准确地判断出所花的时间。经过不断地记录，去总结，不断地调整自己，最后可以说他已经和时间同在。他用时间开销日记记录了他的一生。每个月都会画一些图表，做总结，到年终又会根据月总结，做一份年度总结。</p>
-<p>他的成果令人惊叹，生前发表了70来部学术著作。其中有分散分析、生物分类学、昆虫学方面的经典著作。还有其他一些回忆录，和大量的信件。我无法想象他究竟是怎样过完这一生的，他这一生只在做他想做的事情，错过了很多可以像其他一些科学家获得社会好评的机会，或者说让自己和家人过上更好的生活的机会，他的生活极其简朴，超过最低水平的东西，他都不接受。不被外界所诱惑，一直过着自己想要的生活，带着自己远大的目标一直走下去。</p>
-<h3 id="摘录：">摘录：</h3><ol>
-<li>我要谈的是一位当代的杰出人物，是他们没有听说过的。我要描绘一位精神上的英雄，他的道德信条是如此崇高，以致如今看来似乎是不合时宜了。他的一生，表面上再平凡不过，从某几点上说，竟是“不如意事十有八九”。以小市民的眼光看，他是个典型的不走运的人。然而就生活的内涵而论，这个心灵和谐，很幸福，而且他的幸福是一种最高级的幸福。</li>
-<li>柳比歇夫有他的崇拜者、拥护者、景仰者，也有读者。他没有学生，只有私淑弟子。也就是说，他并没有教他们，是他们向他学习。学习什么呢？很难说。主要是学习应当怎样生活、怎样思考吧。似乎咱们总算找到了一个人，<strong>他知道他活着是为了什么,有什么目的……仿佛他有什么崇高的目的，甚至可能领悟了他存在的意义。</strong>不仅仅是过一种合乎道德的生活，不仅仅是问心无愧地工作，似乎他明了他所作所为的内涵。</li>
-<li>他的工作方法是一个创举，不问他其余的工作和研究如何，这种工作方法是独立存在的。从表面上看，这是纯技术性的工作方法，一点也不起眼。它是自然而然形成的，但几十年来它取得了精神上的力量。它成为柳比歇夫生活的骨架，不仅保证了最高的效率，并且保证了最旺盛的生命力。</li>
-<li>我们一生的时间，大部分用于错误及种种恶行；很大一部分虚抛浪掷，无所事事。我们整个一生，几乎都没有用来干应当干的事。</li>
-<li>大家知道，幸福的人是不看表的；反过来说也对，不看表的人是幸福的。但是，柳比歇夫不是由于工作上的关系，不是出于不得已，而是自愿地担当起“看表”的苦差使。</li>
-<li>柳比歇夫如此忠于自己的方法，这本身便是一个独特的现象；这样的日记，单单它的存在，说不定便是独一无二的。</li>
-<li>最好不是去震惊世界，而是像易卜生所说的，<strong>生活在世界上</strong>。</li>
-<li>他对“时间下脚料”的利用，考虑的无微不至。出门旅行，他看小部头的书，学习外语。举个例子，英语，他就是主要利用“时间下脚料”学会的。</li>
-<li>计划就是挑选时间、规定节律，使一切都各得其所。</li>
-<li>这个方法之所以能够存在，是依靠经常的计算和检查。没有计算的计划是盲目的计划，就像某些研究所那样，光会做计划，却不去操心这计划能不能完成。</li>
-<li><strong>应当学会计算一切时间</strong>。</li>
-</ol>
-<p>惊叹怎么会有人过这样的一生。当然，我不会去过这样的一生，别人的奇特自己是没办法去复制的。需要考虑的是自己怎样去过奇特的一生？</p>
-<p>—EOF—</p>
-<p>No.304</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -565,11 +564,13 @@
   
     <li><a href="/categories/Mac/">Mac</a><small>2</small></li>
   
-    <li><a href="/categories/SQL-Server/">SQL Server</a><small>1</small></li>
-  
     <li><a href="/categories/JAVA/SQL-Server/">SQL Server</a><small>1</small></li>
   
+    <li><a href="/categories/SQL-Server/">SQL Server</a><small>1</small></li>
+  
     <li><a href="/categories/Solr/">Solr</a><small>1</small></li>
+  
+    <li><a href="/categories/创业/">创业</a><small>1</small></li>
   
     <li><a href="/categories/工具/">工具</a><small>1</small></li>
   
@@ -579,9 +580,9 @@
   
     <li><a href="/categories/未分类/">未分类</a><small>1</small></li>
   
-    <li><a href="/categories/生活/">生活</a><small>3</small></li>
-  
     <li><a href="/categories/Mac/生活/">生活</a><small>1</small></li>
+  
+    <li><a href="/categories/生活/">生活</a><small>3</small></li>
   
     <li><a href="/categories/阅读/">阅读</a><small>6</small></li>
   
@@ -640,6 +641,8 @@
   
     <li><a href="/tags/分布式/">分布式</a><small>1</small></li>
   
+    <li><a href="/tags/创业/">创业</a><small>1</small></li>
+  
     <li><a href="/tags/好奇心/">好奇心</a><small>1</small></li>
   
     <li><a href="/tags/守时/">守时</a><small>1</small></li>
@@ -671,6 +674,8 @@
     <li><a href="/tags/统计/">统计</a><small>1</small></li>
   
     <li><a href="/tags/虚心/">虚心</a><small>1</small></li>
+  
+    <li><a href="/tags/记录/">记录</a><small>1</small></li>
   
     <li><a href="/tags/随机值/">随机值</a><small>1</small></li>
   
